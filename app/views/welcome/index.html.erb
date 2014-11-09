@@ -1,2 +1,2 @@
 <h3 class="text-center cst_h3">260 1st Ave South, St. Petersburg, FL</h3>
-<%= image_tag 'firehouse.jpg', class: 'img-responsive' %>
+<%= image_tag "#{ENV['S3_DIRECTORY']}/#{ENV['S3_BUCKET']}/firehouse.jpg", class: 'img-responsive' %>
