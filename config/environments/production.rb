@@ -75,7 +75,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_controller.asset_host =  "//#{ENV['S3_BUCKET']}.s3.amazonaws.com"
-  config.action_mailer.asset_host = "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com"
 end
