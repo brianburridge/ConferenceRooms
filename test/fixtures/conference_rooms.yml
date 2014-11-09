@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: conference_rooms
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  location    :string(255)
+#  sq_ft       :integer
+#  photo       :string(255)
+#  description :text
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  sq_ft: 1
+  photo: MyString
+  description: MyText
+  user_id: 
+
+two:
+  name: MyString
+  location: MyString
+  sq_ft: 1
+  photo: MyString
+  description: MyText
+  user_id: 

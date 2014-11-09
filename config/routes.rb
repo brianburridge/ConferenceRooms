@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'signup', to: 'session#signup'
+  post 'signup', to: 'session#signup'
+  post 'signin', to: 'session#signin'
+  delete 'signout', to: 'session#signout'
+
+  root 'welcome#index'
+
+  resources :conference_rooms do
+    collection do
+      post 'search', to: 'conference_rooms#search'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

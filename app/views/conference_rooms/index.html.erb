@@ -1,0 +1,57 @@
+<h3 class="text-center cst_h3">
+  <%= link_to 'Add New', new_conference_room_path, class: 'btn btn-primary btn-sm', role: 'button', style: 'float: left' %>
+  Conference Rooms - Listing
+</h3>
+<div class="dropdown">
+  <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Search
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation">
+      <%= form_tag search_conference_rooms_path, class: 'navbar-form' do %>
+          <%= text_field_tag 'search_query', nil, placeholder: 'Enter Your Search' %>
+          <%= submit_tag 'Search', class: 'btn btn-sm' %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Sq ft</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conference_rooms.each do |conference_room| %>
+      <tr>
+        <td><%= image_tag conference_room.photo.thumb.url %></td>
+        <td><%= conference_room.name %></td>
+        <td><%= conference_room.location %></td>
+        <td><%= conference_room.sq_ft %></td>
+        <td><%= conference_room.description %></td>
+        <td><%= link_to conference_room do %>
+              <span class="glyphicon glyphicon-eye-open" title="Display"></span>
+            <% end %>
+        </td>
+        <td><%= link_to edit_conference_room_path(conference_room) do %>
+              <span class="glyphicon glyphicon-pencil" title="Edit"></span>
+            <% end %>
+        </td>
+        <td><%= link_to conference_room, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-remove" title="Remove"></span>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+

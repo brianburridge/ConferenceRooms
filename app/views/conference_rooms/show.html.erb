@@ -1,0 +1,27 @@
+<h3 class="text-center cst_h3">
+  <%= link_to 'Return', conference_rooms_path, class: 'btn btn-primary btn-sm', role: 'button', style: 'float: left' %>
+  Conference Rooms - Display
+</h3>
+
+<div class="container-fluid">
+    <%= image_tag @conference_room.photo.url, style: 'float: left' %>
+    <p>
+      <strong>Name:</strong>
+      <%= @conference_room.name %>
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      <%= @conference_room.location %>
+    </p>
+
+    <p>
+      <strong>Sq ft:</strong>
+      <%= @conference_room.sq_ft %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @conference_room.description %>
+    </p>
+</div>

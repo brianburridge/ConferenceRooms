@@ -1,0 +1,39 @@
+<div class="container">
+<%= form_for(@conference_room, class: 'form-horizontal') do |f| %>
+    <% if @conference_room.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@conference_room.errors.count, "error") %> prohibited this conference_room from being saved:</h2>
+
+          <ul>
+            <% @conference_room.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="col-xs-3 form-group text-center">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="col-xs-3 form-group text-center">
+      <%= f.label :location %>
+      <%= f.text_field :location, class: 'form-control' %>
+    </div>
+    <div class="col-xs-2 form-group text-center">
+      <%= f.label :sq_ft %>
+      <%= f.number_field :sq_ft, class: 'form-control' %>
+    </div>
+    <div class="col-xs-4 form-group text-center">
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+    </div>
+    <div class="col-xs-12 form-group text-center">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="actions col-xs-12">
+      <%= f.submit %>
+    </div>
+<% end %>
+</div>
