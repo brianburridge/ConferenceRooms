@@ -58,6 +58,8 @@ gem 'mini_magick'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'asset_sync'
+
 # Use postgres and the Heroku rails gem for Heroku
 group :production do
   gem 'pg'
